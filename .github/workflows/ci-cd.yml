@@ -52,5 +52,5 @@ jobs:
         vercel-org-id: ${{ secrets.VERCEL_ORG_ID }}
         vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID }}
       env:
-        MONGODB_URL: ${{ secrets.MONGODB_URL }}
+        MONGO_URL: ${{ secrets.MONGO_URL }}
 
