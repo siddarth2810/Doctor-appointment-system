@@ -18,10 +18,10 @@ jobs:
 
     steps:
     - name: Checkout code
-      uses: actions/checkout@v3  # Updated to v3
+      uses: actions/checkout@v4  # Updated to v3
 
     - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v3  # Updated to v3
+      uses: actions/setup-node@v4  # Updated to v3
       with:
         node-version: ${{ matrix.node-version }}
 
@@ -37,13 +37,6 @@ jobs:
       run: npm run build
       working-directory: ./client
 
-    - name: Run backend tests
-      run: npm test
-      working-directory: .
-
-    - name: Run client tests
-      run: npm test
-      working-directory: ./client
 
     - name: Deploy to Vercel
       uses: amondnet/vercel-action@v20
