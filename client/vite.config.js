@@ -6,7 +6,7 @@ export default defineConfig({
     server: {
         proxy: {
             "/api": {
-                target: "http://localhost:8082",
+                target: "https://doctor-appointment-system-beta-one.vercel.app/",
                 changeOrigin: true,
                 secure: false,
             },
