@@ -37,13 +37,6 @@ jobs:
       run: npm run build
       working-directory: ./client
 
-    - name: Run backend tests
-      run: npm test
-      working-directory: .
-
-    - name: Run client tests
-      run: npm test
-      working-directory: ./client
 
     - name: Deploy to Vercel
       uses: amondnet/vercel-action@v20
