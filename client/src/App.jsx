@@ -5,6 +5,7 @@ import "./App.css";
 import HomePage from "./pages/HomePage";
 import Register from "./pages/Register";
 import Login from "./pages/Login";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const router = createBrowserRouter([
   { path: "/", element: <HomePage /> },
