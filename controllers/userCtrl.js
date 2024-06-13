@@ -1,5 +1,6 @@
 const userModel = require('../models/userModel');
 const bcrypt = require('bcryptjs');
+const jwt = require('jsonwebtoken')
 
 const registerController = async (req, res) => {
     try {
@@ -24,8 +25,7 @@ const registerController = async (req, res) => {
     }
 };
 
-const loginController = (req, res) => {
-    // login logic
+const loginController = async (req, res) => {
 };
 
 module.exports = { registerController, loginController };
