@@ -10,6 +10,7 @@
     {
       "src": "/(.*)",
       "dest": "server.js"
+<<<<<<< HEAD
     },
      {
       "src": "/api/(.*)",
@@ -35,6 +36,8 @@
 
 
       "dest": "/server.js"
+=======
+>>>>>>> parent of 2929625 (fix json files)
     }
   ]
 }
