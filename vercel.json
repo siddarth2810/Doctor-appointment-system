@@ -6,13 +6,11 @@
       "use": "@vercel/node"
     }
   ],
-  "routes": [
-    {
-      "src": "/(.*)",
-      "dest": "server.js"
-    }
-  ],
   "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "server.js"
+    },
     {
       "source": "/api/(.*)", 
       "destination": "https://doctor-appointment-system-beta-one.vercel.app/api/$1" 
