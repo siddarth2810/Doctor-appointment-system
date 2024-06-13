@@ -18,6 +18,11 @@ app.use(express.json()); // to reduce parsing errors
 app.use(morgan('dev'));
 app.use(cors()); // enable CORS
 
+
+app.get('/', (req, res) => {
+  res.send('Hello World! This is the root route.');
+});
+
 // routes
 app.use("/api/v1/user", require('./routes/userRoutes'));
 
