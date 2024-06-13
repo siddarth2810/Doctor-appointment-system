@@ -16,12 +16,24 @@ connectDB();
 // middlewares
 app.use(express.json()); // to reduce parsing errors
 app.use(morgan('dev'));
-app.use(cors()); // enable CORS
+
+const corsOptions = {
+  origin: 'https://server-side-3mvw5c1kk-siddarth2810s-projects.vercel.app/',
+  optionsSuccessStatus: 200,
+};
+app.use(cors(corsOptions));
 
 
 app.get('/', (req, res) => {
   res.send('Hello World! This is the root route.');
 });
+
+app.post('/api/v1/user/register', (req, res, next) => {
+    console.log('Received POST request at /api/v1/user/register');
+    console.log('Request Body:', req.body);
+    next();
+});
+
 
 // routes
 app.use("/api/v1/user", require('./routes/userRoutes'));

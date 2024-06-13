@@ -6,7 +6,7 @@ export default defineConfig({
     server: {
         proxy: {
             "/api": {
-                target: "http://localhost:8082",
+                target: "https://server-side-3mvw5c1kk-siddarth2810s-projects.vercel.app/",
                 changeOrigin: true,
                 secure: false,
             },
