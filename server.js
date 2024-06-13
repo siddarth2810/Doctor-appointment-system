@@ -26,6 +26,12 @@ app.get('/', (req, res) => {
 // routes
 app.use("/api/v1/user", require('./routes/userRoutes'));
 
+app.get('/api/v1/user/random', (req, res) => {
+  res.send(`${req}`);
+});
+
+
+
 app.listen(8082, () => {
     console.log(`Server Running in ${process.env.NODE_ENV} Mode`);
 });
