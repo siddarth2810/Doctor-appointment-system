@@ -10,10 +10,12 @@
     {
       "src": "/(.*)",
       "dest": "server.js"
-    },
-     {
-      "src": "/api/(.*)",
-      "dest": "/server.js"
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/api/(.*)", 
+      "destination": "https://doctor-appointment-system-beta-one.vercel.app/api/$1" /
     }
   ]
 }
