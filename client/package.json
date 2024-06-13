@@ -1,6 +1,6 @@
 {
   "name": "client",
-  "proxy": "https://doctor-appointment-system-beta-one.vercel.app/",
+  "proxy": "https://server-side-7or8qp0ln-siddarth2810s-projects.vercel.app/",
   "private": true,
   "version": "0.0.0",
   "type": "module",
