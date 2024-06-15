@@ -18,14 +18,13 @@ app.use(express.json()); // to reduce parsing errors
 app.use(morgan('dev'));
 
 const corsOptions = {
-  origin: 'https://server-side-3mvw5c1kk-siddarth2810s-projects.vercel.app/',
-  optionsSuccessStatus: 200,
+    origin: '*',
 };
 app.use(cors(corsOptions));
 
 
 app.get('/', (req, res) => {
-  res.send('Hello World! This is the root route.');
+    res.send('Hello World! This is the root route.');
 });
 
 app.post('/api/v1/user/register', (req, res, next) => {
