@@ -8,7 +8,7 @@ const Register = () => {
 
   const onFinishHandler = async (values) => {
     try {
-      const res = await axios.post("api/v1/user/register", values);
+      const res = await axios.post("https://server-side-3mvw5c1kk-siddarth2810s-projects.vercel.app/api/v1/user/register", values);
 
       if (res.data.success) {
         message.success("User Registered Successfully");
