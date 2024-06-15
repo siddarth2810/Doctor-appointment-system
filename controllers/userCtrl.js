@@ -27,20 +27,20 @@ const registerController = async (req, res) => {
 
 const loginController = async (req, res) => {
     try {
-        const user = await userModel.findOne({ email: req.body.email })
+        const user = await userModel.findOne({ email: req.body.email }).lean();
         if (!user) {
-            return res.status(200).send({ success: false, message: 'User does not exist' })
+            return res.status(401).send({ message: 'User does not exist' })
         }
         const isMatch = await bcrypt.compare(req.body.password, user.password)
         if (!isMatch) {
-            return res.status(200).send({ success: false, mesage: `Invaild password or Email` })
+            return res.status(401).send({  message: `Invaild password or Email` })
         }
-        const jwt = await jwt.sign({ id: user.__id }, process.env.JWT_SECRET, { expiresIn: '1d' }) 
+        const jwt = jwt.sign({ id: user.__id }, process.env.JWT_SECRET, { expiresIn: '1d' }) 
         return res.status(200).send({ success: true, message: 'Login successful !', token })
     }
     catch (err) {
         console.log(err)
-        return res.status(500).send({ success: false, message: `Internel server error ${err.message}` })
+        return res.status(500).send({ message: `Internel server error ${err.message}` })
     }
 };
 

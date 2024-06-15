@@ -8,7 +8,7 @@ const Login = () => {
     const navigate = useNavigate();
     const onFinishHandler = async (values) => {
         try {
-            const res = await axios.post("api/v1/user/login", values);
+            const res = await axios.post("https://server-side-3mvw5c1kk-siddarth2810s-projects.vercel.app/api/v1/user/login", values);
 
             if (res.data.success) {
                 message.success(`Login successful`);
