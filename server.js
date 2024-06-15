@@ -27,6 +27,13 @@ app.get('/', (req, res) => {
     res.send('Hello World! This is the root route.');
 });
 
+app.use(express.static('./client/dist'));
+
+app.get("*", (req, res) => {
+   res.sendFile(path.resolve(__dirname, "client", "dist",     
+   "index.html"));
+});
+
 app.post('/api/v1/user/register', (req, res, next) => {
     console.log('Received POST request at /api/v1/user/register');
     console.log('Request Body:', req.body);
@@ -37,8 +44,8 @@ app.post('/api/v1/user/register', (req, res, next) => {
 // routes
 app.use("/api/v1/user", require('./routes/userRoutes'));
 
-
-app.listen(8082, () => {
+app.set('port', process.env.PORT || 8082);
+app.listen(port, () => {
     console.log(`Server Running in ${process.env.NODE_ENV} Mode`);
 });
 
