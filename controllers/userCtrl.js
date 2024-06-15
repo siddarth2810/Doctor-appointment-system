@@ -35,7 +35,7 @@ const loginController = async (req, res) => {
         if (!isMatch) {
             return res.status(200).send({ success: false, mesage: `Invaild password or Email` })
         }
-        const jwt = jwt.sign({ id: user.__id }, process.env.JWT_SECRET, { expiresIn: '1d' })
+        const jwt = await jwt.sign({ id: user.__id }, process.env.JWT_SECRET, { expiresIn: '1d' }) 
         return res.status(200).send({ success: true, message: 'Login successful !', token })
     }
     catch (err) {
